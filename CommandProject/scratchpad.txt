@@ -1,0 +1,26 @@
+
+//List<Book> books=new ArrayList<>();
+List<Map<String,
+
+>> books=new ArrayList<>();
+while(rs.next()){
+//Book oneBook=new Book();
+//oneBook.setBookName(rs.getString("bookName"));
+Map<String,Object> oneBook=new HashMap<>();
+oneBook.put("bookName",rs.getString("bookName"));
+books.add(oneBook);
+
+
+
+
+}
+
+request.setAttribute("books",books);
+
+
+
+
+<c:foreach item="${books}" var='oneBook'>
+<div>${oneBook.bookName}</div>
+
+</c:foreach>
